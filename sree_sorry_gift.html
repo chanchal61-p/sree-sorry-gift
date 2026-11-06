@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#160b19">
+<title>A Little Sorry, A Lot of Love | Sree</title>
+<style>
+  :root { --pink:#ff7ca8; --rose:#ff4f83; --cream:#fff4ed; --ink:#25111f; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    margin:0; min-height:100vh; color:var(--cream);
+    font-family: Georgia, "Times New Roman", serif;
+    background: radial-gradient(ellipse at top, #4b1837 0%, #241023 44%, #100914 100%);
+    overflow-x:hidden;
+  }
+  .stars, .hearts { position:fixed; inset:0; pointer-events:none; overflow:hidden; z-index:0; }
+  .star { position:absolute; width:2px;height:2px;background:#fff6f9;border-radius:50%;opacity:.55;animation:twinkle 3s infinite ease-in-out; }
+  @keyframes twinkle { 0%,100%{opacity:.2;transform:scale(.8)} 50%{opacity:.9;transform:scale(1.4)} }
+  .floating-heart { position:absolute; bottom:-40px; color:#ff83ad; opacity:.35; animation:floatUp linear forwards; }
+  @keyframes floatUp { to { transform:translateY(-110vh) rotate(25deg); opacity:0; } }
+  main { position:relative;z-index:1;width:min(760px,92%);margin:auto;padding:36px 0 55px;text-align:center; }
+  .eyebrow { letter-spacing:.22em;text-transform:uppercase;font: .72rem Arial,sans-serif;color:#ffc0d5; }
+  h1 { font-size:clamp(2.2rem,8vw,4.5rem);line-height:1.08;margin:15px 0 8px; }
+  h1 span { color:#ff9bbb; }
+  .sub { color:#f7cbd9;font:1rem/1.7 Arial,sans-serif;margin:0 auto 24px;max-width:520px; }
+  .heart-wrap { height:205px;display:grid;place-items:center;margin:8px auto 18px; }
+  .heart { position:relative;width:92px;height:92px;background:var(--rose);transform:rotate(-45deg);animation:beat 1.25s infinite;filter:drop-shadow(0 0 25px #ff4f8370); }
+  .heart:before,.heart:after { content:"";position:absolute;width:92px;height:92px;background:var(--rose);border-radius:50%; }
+  .heart:before {top:-46px;left:0}.heart:after{left:46px;top:0}
+  @keyframes beat { 0%,100%{transform:rotate(-45deg) scale(1)} 15%{transform:rotate(-45deg) scale(1.13)} 30%{transform:rotate(-45deg) scale(1)} 45%{transform:rotate(-45deg) scale(1.08)} }
+  .heart:after { z-index:0; }
+  .heart { z-index:1; }
+  .btn { border:1px solid #ff9bbb;background:linear-gradient(135deg,#ff7ca8,#e94379);color:#280e1b;border-radius:999px;padding:13px 23px;font-weight:bold;font-size:1rem;cursor:pointer;box-shadow:0 8px 30px #ff4f8330;transition:transform .2s; }
+  .btn:hover { transform:translateY(-2px); }
+  .letter { display:none;text-align:left;margin:30px auto 0;padding:clamp(22px,5vw,38px);border:1px solid #ff9bbb55;border-radius:22px;background:linear-gradient(145deg,#fff5f0f5,#ffe2ecf2);color:var(--ink);box-shadow:0 18px 60px #0005; }
+  .letter.show { display:block;animation:appear .75s ease both; }
+  @keyframes appear { from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)} }
+  .letter h2 {text-align:center;color:#a52c58;font-size:1.8rem;margin:0 0 20px;}
+  .letter p {font:1.03rem/1.85 Arial,sans-serif;margin:0 0 14px;}
+  .letter .signature {text-align:right;font-family:Georgia,serif;font-size:1.25rem;color:#a52c58;margin-top:22px;}
+  .promise { margin:28px auto 0;padding:20px;border-radius:18px;background:#ffffff0a;border:1px solid #ffffff1c;color:#ffd6e3;font: .98rem/1.7 Arial,sans-serif; }
+  .footer {margin-top:30px;color:#cda7b8;font: .78rem/1.6 Arial,sans-serif;}
+  .tiny {color:#ffabc5}
+  @media(max-width:480px){ main{padding-top:28px}.heart-wrap{height:175px}.heart{transform:rotate(-45deg) scale(.82)}.heart:before,.heart:after{width:92px;height:92px}.letter p{font-size:.98rem} }
+  @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="stars" id="stars"></div><div class="hearts" id="hearts"></div>
+<main>
+  <div class="eyebrow">A little gift made with love</div>
+  <h1>For my dearest<br><span>Sree 🌸</span></h1>
+  <p class="sub">Some feelings are difficult to say out loud.<br>So I made this little corner of the world just for you.</p>
+  <div class="heart-wrap" aria-label="A beating heart"><div class="heart"></div></div>
+  <button class="btn" id="openBtn" type="button">Open my little letter 💌</button>
+
+  <section class="letter" id="letter">
+    <h2>My dearest Priya,</h2>
+    <p>I want to say sorry without making excuses. I know that lately, some of my words, actions, or silence may have hurt you. Maybe I haven't shown you the care and affection you deserve, and I am truly sorry for that.</p>
+    <p>Please don't think that my love for you has become less. Sometimes I struggle to express what is in my heart, but you are still so precious to me. You deserve to feel loved, respected, heard, and special.</p>
+    <p>I know a “sorry” cannot fix everything by itself. I want to show you through my actions that I am listening, that your feelings matter, and that I am willing to become better.</p>
+    <p>I cannot promise to be perfect, but I can promise to keep trying with honesty and care. Thank you for being in my life, my Kathgolap. 🌸</p>
+    <p class="signature">I am sorry, my love.<br><strong>I love you, Sree. Always. ❤️</strong><br><small>Forever yours, Choyon</small></p>
+  </section>
+
+  <div class="promise">
+    <span class="tiny">A promise, not just words</span><br>
+    I’ll try to listen more, understand you better, and let my actions speak with love.
+  </div>
+  <div class="footer">Made for Sree, with a sincere heart.<br>Tap the letter above whenever you’re ready. <span class="tiny">♥</span></div>
+</main>
+<script>
+  // Soft twinkling stars
+  const stars = document.getElementById('stars');
+  for (let i=0;i<75;i++) {
+    const s=document.createElement('span'); s.className='star';
+    s.style.left=Math.random()*100+'%'; s.style.top=Math.random()*100+'%';
+    s.style.animationDelay=(Math.random()*3)+'s';
+    stars.appendChild(s);
+  }
+  // Gentle floating hearts
+  const hearts=document.getElementById('hearts');
+  function floatHeart(){
+    const h=document.createElement('span'); h.className='floating-heart'; h.textContent=Math.random()>.5?'♥':'♡';
+    h.style.left=Math.random()*100+'%'; h.style.fontSize=(13+Math.random()*22)+'px';
+    h.style.animationDuration=(7+Math.random()*7)+'s';
+    hearts.appendChild(h); setTimeout(()=>h.remove(),14500);
+  }
+  setInterval(floatHeart,850);
+  const button=document.getElementById('openBtn');
+  const letter=document.getElementById('letter');
+  button.addEventListener('click',()=>{
+    letter.classList.add('show');
+    button.textContent='My letter is open ❤️';
+    button.disabled=true;
+    letter.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+</script>
+</body>
+</html>
